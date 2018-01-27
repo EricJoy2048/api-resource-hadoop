@@ -8,18 +8,17 @@ import java.util.Set;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
-
-import com.baifendian.clustermanager.bean.Application;
-import com.baifendian.clustermanager.bean.CapacityScheduler;
-import com.baifendian.clustermanager.bean.FairScheduler;
-import com.baifendian.clustermanager.bean.FifoScheduler;
-import com.baifendian.clustermanager.bean.Job;
-import com.baifendian.clustermanager.bean.Task;
-import com.baifendian.clustermanager.fromrestapi.server.IMapReduceServer;
-import com.baifendian.clustermanager.fromrestapi.server.IResourceManagerServer;
-import com.baifendian.clustermanager.fromrestapi.server.impl.MapReduceServerImpl;
-import com.baifendian.clustermanager.fromrestapi.server.impl.YarnRMServerImpl;
-import com.baifendian.clustermanager.fromrestapi.util.SchedulerType;
+import org.opensource.hadoop.clustermanager.bean.Application;
+import org.opensource.hadoop.clustermanager.bean.CapacityScheduler;
+import org.opensource.hadoop.clustermanager.bean.FairScheduler;
+import org.opensource.hadoop.clustermanager.bean.FifoScheduler;
+import org.opensource.hadoop.clustermanager.bean.Job;
+import org.opensource.hadoop.clustermanager.bean.Task;
+import org.opensource.hadoop.clustermanager.fromrestapi.server.IMapReduceServer;
+import org.opensource.hadoop.clustermanager.fromrestapi.server.IResourceManagerServer;
+import org.opensource.hadoop.clustermanager.fromrestapi.server.impl.MapReduceServerImpl;
+import org.opensource.hadoop.clustermanager.fromrestapi.server.impl.YarnRMServerImpl;
+import org.opensource.hadoop.clustermanager.fromrestapi.util.SchedulerType;
 
 public class MRHistoryServerTest {
 
@@ -71,6 +70,13 @@ public class MRHistoryServerTest {
 			}
 		}
 		
+	}
+	
+	@Test
+	public void testGetAppById() {
+		IResourceManagerServer resourceManagerServer = new YarnRMServerImpl();
+		Application ap = resourceManagerServer.getAppById("application_1516377094751_0061");
+		System.out.println(ap.getId());
 	}
 	
 	

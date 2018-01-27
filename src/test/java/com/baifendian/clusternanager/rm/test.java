@@ -7,10 +7,11 @@ import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
+import org.opensource.hadoop.clustermanager.fromrestapi.util.JsonToBeanTools;
+
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
-import com.baifendian.clustermanager.fromrestapi.util.JsonToBeanTools;
 import com.mysql.fabric.xmlrpc.base.Data;
 
 public class test {
