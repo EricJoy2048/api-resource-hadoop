@@ -29,7 +29,7 @@ public class MRHistoryServerTest {
 	@Test
 	public void testGetJobs(){
 		IMapReduceServer is = new MapReduceServerImpl();
-		Job job = is.getJob("job_1447740761011_10016");
+		Job job = is.getJob("job_1516377094751_0061");
 		if(job != null){
 			
 			System.out.println(job.getJobId());
@@ -40,7 +40,7 @@ public class MRHistoryServerTest {
 	@Test
 	public void testGetJobsTasksMap(){
 		IMapReduceServer is = new MapReduceServerImpl();
-		Map<String, List<Task>> ts = is.getJobsTasksMap("job_1447740761011_10016", null);
+		Map<String, List<Task>> ts = is.getJobsTasksMap("job_1516377094751_0061", null);
 		if(ts != null && ts.size() > 0){
 			Set<String> ks = ts.keySet();
 			Iterator<String> its = ks.iterator();
